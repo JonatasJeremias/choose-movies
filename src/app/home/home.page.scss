@@ -6,20 +6,54 @@ $brown: #795548;
 
 $orange: #FF945A;
 $green: #B1DA96;
-
+$amount-of-time: 0.1s;
 .cdk-drag-animating {
     transition: transform 450ms cubic-bezier(0, 0, 0.2, 1);
 }
 
-.current-card {
-    //transition: .5s ease;
+.card-movie {
+    // -webkit-transition: -webkit-transform $amount-of-time ease;
+    // -moz-transition:    -moz-transform $amount-of-time ease;
+    // -o-transition:      -o-transform $amount-of-time ease;
+    // -ms-transition:     -ms-transform $amount-of-time ease;
+    // transition:         transform $amount-of-time ease;
 }
 
 .card-overlay-emotion {
 
 }
 
-.card-overlay-emotion:after {
+.card-overlay-happy:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 3rem;
+    height: 1rem;
+    margin-top: -0.5rem;
+    margin-left: -2.1rem;
+    border: 0.6rem solid #fff;
+    border-top: none;
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+}
+
+.card-overlay-idle:after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 3rem;
+    height: 0;
+    margin-top: -0.5rem;
+    margin-left: -2.1rem;
+    border: 0.6rem solid #fff;
+    border-bottom: none;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+}
+
+.card-overlay-sad:after {
     content: "";
     position: absolute;
     left: 50%;
@@ -41,10 +75,10 @@ $green: #B1DA96;
         top: 50%;
         width: 2rem;
         height: 2rem;
-        margin-left: -1rem;
+        margin-left: -0.5rem;
         color: #fff;
         border-radius: 50%;
-        box-shadow: -2rem -3rem #fff, 2rem -3rem #fff;
+        box-shadow: -2rem -3rem #fff, 1rem -3rem #fff;
 }
 
 .card-overlay {
