@@ -1,0 +1,12 @@
+<div cdkDrag class="card-movie" [ngStyle]="getIndex()" (cdkDragEnded)="onDragEnded($event)" (cdkDragStarted)="onCdkDragStarted($event)"
+  (cdkDragMoved)="onCdkDragMove($event)">
+  <div #ion_card>
+    <div #div_overlay style="opacity: 0" class="card-overlay">
+      <div #div_overlay_sad class="card-overlay-sad card-overlay-emotion"></div>
+      <div #div_overlay_happy class="card-overlay-happy card-overlay-emotion"></div>
+      <div #div_overlay_idle class="card-overlay-idle card-overlay-emotion"></div>
+    </div>
+    
+    <app-card-movie AddWatched="true" AddSemInteresse="true" AddFavorite="true" [movie]="movie"></app-card-movie>
+  </div>
+</div>

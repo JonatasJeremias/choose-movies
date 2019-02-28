@@ -1,6 +1,8 @@
 {
   "name": "likeToDown",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "414f0699"
 }

@@ -1,33 +1,16 @@
-<ion-header>
+<!-- <ion-header>
   <ion-toolbar>
     <ion-title>
       Ionic Blank
     </ion-title>
   </ion-toolbar>
-</ion-header>
+</ion-header> -->
 
-<ion-content padding>
-  <div cdkDrag (cdkDragEnded)="onDragEnded($event, div_overlay_sad, div_overlay_happy, div_overlay_idle, div_overlay, ion_card.el)"
-  (cdkDragStarted)="onCdkDragStarted($event)" (cdkDragMoved)="onCdkDragMove($event, div_overlay_sad, div_overlay_happy, div_overlay_idle, div_overlay, ion_card.el)">
-  <ion-card class="card-movie" #ion_card>
-    <div #div_overlay style="opacity: 0" class="card-overlay"></div>
-    <ion-card-header>
-      <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
-      <ion-card-title>Card Title</ion-card-title>
-    </ion-card-header>
-  
-    <ion-card-content >
-      <div #div_overlay_sad style="opacity: 0" class="card-overlay-sad card-overlay-emotion"></div>
-      <div #div_overlay_happy style="opacity: 0" class="card-overlay-happy card-overlay-emotion"></div>
-      <div #div_overlay_idle style="opacity: 0" class="card-overlay-idle card-overlay-emotion"></div>
-        <p>movX: {{displacementX}}</p>
-        <p>movY: {{displacementY}}</p>
-      Keep close to Nature's heart... and break clear away, once in awhile,
-      and climb a mountain or spend a week in the woods. Wash your spirit clean.
-    </ion-card-content>
-    <div>
-
-    </div>
-  </ion-card>
-</div>
+<ion-content>
+  <div >
+      <app-choose-card *ngIf="firstMovie" 
+        [index]="3" [movie]="firstMovie" (dismissed)="onDismissed($event)"></app-choose-card>
+      <app-choose-card *ngIf="secondMovie" 
+        [index]="2" [movie]="secondMovie" (dismissed)="onDismissed($event)"></app-choose-card>
+  </div>
 </ion-content>

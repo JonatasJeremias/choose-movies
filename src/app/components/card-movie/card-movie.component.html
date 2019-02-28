@@ -1,0 +1,23 @@
+<ion-card class="movie-card">
+    <ion-card-header>
+    <ion-img [src]="movie.imageUrl" width="100%"></ion-img>
+      <ion-card-subtitle>
+        <p>
+            <ion-badge style="margin-right: 5px;" color="primary">{{movie?.imdbInfo?.imdbRating}}</ion-badge>
+            <ion-badge *ngFor="let tag of movie?.tags" style="margin-right: 5px;" color="primary">{{tag}}</ion-badge>
+          </p>
+        <p>{{movie?.imdbInfo?.Type}} | {{movie?.imdbInfo?.Released}}</p>
+      </ion-card-subtitle>
+      <ion-card-title>{{movie?.title}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      
+      <!-- <p>{{getSinopse(movie?.descriptions)}}</p> -->
+    </ion-card-content>
+    <ion-list *ngIf="showLinksDownload">
+      <ion-list-header>Link magnetico</ion-list-header>
+      <ion-item *ngFor="let link of movie.downloadLinks">
+        <ion-label style="white-space: normal;"><a [href]="link?.link" (click)="openLink(link?.link)" >{{ link?.descricao }}</a></ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card>
